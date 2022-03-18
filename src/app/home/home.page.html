@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>
+      Ref App
+      <ion-icon name="home"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <ion-list class="ios list-ios hydrated" color="dark">
+    <ion-list-header class="ios hydrated" color="dark">
+      Tus referencias
+    </ion-list-header>
+
+    <ion-item *ngFor="let booking of Bookings" class="user-list" color="dark">
+      <ion-label>
+
+        <h5>
+          Titulo: {{booking.titulo}}
+        </h5>
+        <h5>
+          Autores: {{booking.autores}}
+        </h5>
+        <h5>
+          Tipo publicacion: {{booking.tipo}}
+        </h5>
+
+        <h5>
+          Evento Revista: {{booking.eventorevista}}
+        </h5>
+
+        <h5>
+          Identificador: {{booking.doi}}
+        </h5>
+
+        <h5>
+          Fecha: {{booking.ano}}
+        </h5>
+
+
+      </ion-label>
+
+
+      <div class="item-note" item-end>
+
+
+        <button ion-button clear (click)="deleteBooking(booking.$idreferencia)">
+          <ion-icon name="trash" style="zoom:2.0"></ion-icon>
+        </button>
+
+        <button ion-button clear [routerLink]="['app/editar/', booking.$idreferencia]">
+          <ion-icon name="create" style="zoom:2.0"></ion-icon>
+        </button>
+
+      </div>
+    </ion-item>
+  </ion-list>

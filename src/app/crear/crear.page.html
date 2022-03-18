@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar class="ios hydrated" color="danger">
+    <ion-title class="ios title-ios hydrated">Añadir</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content color="dark">
+  <ion-list lines="full" color="dark">
+    <form [formGroup]="bookingForm" (ngSubmit)="formSubmit()" color="dark">
+
+      <ion-item color="dark">
+        <ion-label position="floating">Titulo</ion-label>
+        <ion-input formControlName="titulo" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item color="dark">
+        <ion-label position="floating">Autores</ion-label>
+        <ion-input formControlName="autores" type="text" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item color="dark">
+        <ion-label position="floating">Tipo</ion-label>
+        <ion-input formControlName="tipo" type="text" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item color="dark">
+        <ion-label position="floating">Evento Revista</ion-label>
+        <ion-input formControlName="eventorevista" type="text" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item color="dark">
+        <ion-label position="floating">Codigo identificador</ion-label>
+        <ion-input formControlName="doi" type="text" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item color="dark">
+        <ion-label position="floating">Año de publicacion</ion-label>
+        <ion-input formControlName="ano" type="text" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-row color="dark">
+        <ion-col color="dark">
+          <ion-button type="submit" color="danger" shape="full" expand="block">Aceptar</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+</ion-content>
